@@ -74,21 +74,12 @@
 [submodule "thirdparty/nbsdxSimpleJSON"]
 	path = thirdparty/nbsdxSimpleJSON
 	url = https://github.com/nbsdx/SimpleJSON.git
-[submodule "thirdparty/Jzon"]
-	path = thirdparty/Jzon
-	url = https://github.com/Zguy/Jzon.git
 [submodule "thirdparty/sajson"]
 	path = thirdparty/sajson
 	url = https://github.com/chadaustin/sajson.git
-[submodule "thirdparty/jvar"]
-	path = thirdparty/jvar
-	url = https://github.com/YasserAsmi/jvar.git
 [submodule "thirdparty/taocppjson"]
 	path = thirdparty/taocppjson
 	url = https://github.com/taocpp/json.git
-[submodule "thirdparty/configuru"]
-	path = thirdparty/configuru
-	url = https://github.com/emilk/Configuru.git
 [submodule "thirdparty/sheredom-jsonh"]
 	path = thirdparty/sheredom-jsonh
 	url = https://github.com/sheredom/json.h.git
@@ -107,9 +98,6 @@
 [submodule "thirdparty/ccan"]
 	path = thirdparty/ccan
 	url = https://github.com/rustyrussell/ccan.git
-[submodule "thirdparty/ujson"]
-	path = thirdparty/ujson
-	url = https://bitbucket.org/awangk/ujson.git
 [submodule "thirdparty/cJSON"]
 	path = thirdparty/cJSON
 	url = https://github.com/DaveGamble/cJSON.git
