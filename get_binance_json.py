@@ -18,7 +18,7 @@ filenames = 'exchange_info.json\n'
 
 #get exchange info
 data = client.get_exchange_info()
-json.dump(data, open('data/exchange_info.json', 'w'), ensure_ascii=False)
+json.dump(data, open('data/exchange_info.json', 'w'), indent=4, ensure_ascii=False)
 
 
 for pair in pairs:
@@ -26,17 +26,17 @@ for pair in pairs:
         data = client.get_order_book(symbol=pair, limit=250)
         filename = 'orderBook_%s_limit_%s.json' % (pair, limit)
         filenames += filename + '\n'
-        json.dump(data, open('data/' + filename, 'w'), ensure_ascii=False)
+        json.dump(data, open('data/' + filename, 'w'), indent=4, ensure_ascii=False)
 
     data = client.get_recent_trades(symbol=pair, limit=1000)
     filename = 'recent_trades_%s_limit_1000.json' % pair
     filenames += filename + '\n'
-    json.dump(data, open('data/' + filename, 'w'), ensure_ascii=False)
+    json.dump(data, open('data/' + filename, 'w'), indent=4, ensure_ascii=False)
 
     data = client.get_avg_price(symbol=pair)
     filename = 'average_price_%s.json' % pair
     filenames += filename + '\n'
-    json.dump(data, open('data/' + filename, 'w'), ensure_ascii=False)
+    json.dump(data, open('data/' + filename, 'w'), indent=4, ensure_ascii=False)
 
 print(filenames, file=open("data/data.txt", 'w'))
 print('DONE!')
