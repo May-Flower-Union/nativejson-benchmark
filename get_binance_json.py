@@ -9,12 +9,21 @@ if len(sys.argv) < 3:
 api_key = sys.argv[1]
 secret_key = sys.argv[2]
 
-pairs = ['ETHBTC','ADABTC','AVAXBTC','DOTBTC','LTCBTC','LUNABNB','SOLBNB','BAKEBNB','BTCBUSD','SOLUSDT', 'FILUPUSDT']
-limits = [250, 500, 1000, 2500, 5000]
+pairs = ['ETHBTC','ADABTC','AVAXBTC',
+        'DOTBTC','LTCBTC','LUNABNB',
+        'SOLBNB','BAKEBNB','BTCBUSD',
+        'SOLUSDT', 'FILUPUSDT', 'TRXBNB',
+        'OGNBNB', 'REEFBTC', 'WINTRX',
+        'SLPETH', 'BETHETH']
+          
+limits = [1000, 2500, 5000]
 
 client = Client(api_key, secret_key)
 
-filenames = 'exchange_info.json\n'
+filenames = 'exchange_info.json\n' \
+            'canada.json\n' \
+            'citm_catalog.json\n' \
+            'twitter.json\n' 
 
 #get exchange info
 data = client.get_exchange_info()
@@ -23,13 +32,13 @@ json.dump(data, open('data/exchange_info.json', 'w'), indent=4, ensure_ascii=Fal
 
 for pair in pairs:
     for limit in limits:
-        data = client.get_order_book(symbol=pair, limit=250)
+        data = client.get_order_book(symbol=pair, limit=limit)
         filename = 'orderBook_%s_limit_%s.json' % (pair, limit)
         filenames += filename + '\n'
         json.dump(data, open('data/' + filename, 'w'), indent=4, ensure_ascii=False)
 
-    data = client.get_recent_trades(symbol=pair, limit=1000)
-    filename = 'recent_trades_%s_limit_1000.json' % pair
+    data = client.get_recent_trades(symbol=pair, limit=5000)
+    filename = 'recent_trades_%s_limit_5000.json' % pair
     filenames += filename + '\n'
     json.dump(data, open('data/' + filename, 'w'), indent=4, ensure_ascii=False)
 
